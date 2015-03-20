@@ -43,6 +43,6 @@ vars = gsub("[-(,)]", "", vars)
 names(m_all) = vars
 
 # Creates a tidy data set with the average of each variable for each activity and each subject.
-m_all = aggregate(m_all[,3:81], by=list(activity=m_all$activity, subject=m_all$subject), FUN=mean, nr.rm=T)
-write.table(m_all, "uci_har_dataset.txt", sep="\t", row.names=F)
+m_all = aggregate(m_all[,3:81], by=list(activity=m_all$activity, subject=m_all$subject), FUN=mean, nr.rm=TRUE)
+write.table(m_all, "uci_har_dataset.txt", sep="\t", row.names=FALSE)
 
